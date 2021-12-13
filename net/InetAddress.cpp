@@ -43,6 +43,7 @@ namespace sub_muduo {
                 return buf;
             } else if (addr_.sin_family == AF_INET6) {
                 //ipv6
+                return "";
             }
         }
 
