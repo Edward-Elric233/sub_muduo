@@ -38,12 +38,12 @@ void Channel::tie(const std::shared_ptr<void> &obj) {
 void Channel::update() {
     //在Poller中更新当前Channel所监听的事件，进行epoll_ctl操作
     //TODO:EventLoop中的updateChannel还没有写
-//    loop_->updateChannel(this);
+    loop_->updateChannel(this);
 }
 
 void Channel::remove() {
     //TODO:同上没有实现
-//    loop_->removeChannel(this);
+    loop_->removeChannel(this);
 }
 
 void Channel::handleEvent(Timestamp receiveTime) {

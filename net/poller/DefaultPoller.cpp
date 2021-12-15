@@ -5,6 +5,7 @@
 // Description: 实现Poller::newDefaultPoller()
 
 #include "Poller.h"
+#include "EPollPoller.h"
 
 #include <stdlib.h>
 
@@ -16,5 +17,6 @@ Poller *Poller::newDefaultPoller(EventLoop *loop) {
         //使用poll实现
     } else {
         //使用epoll实现
+        return new EPollPoller;
     }
 }
