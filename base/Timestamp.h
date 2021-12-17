@@ -15,7 +15,7 @@
 namespace sub_muduo{
 
 
-    class Timestamp :  copyable{
+    class Timestamp :  copyable {
         using system_clock = std::chrono::system_clock;
         using string = std::string;
         system_clock::time_point tp_;    //保存当前时间点

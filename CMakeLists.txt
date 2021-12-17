@@ -17,10 +17,11 @@ link_directories(lib)
 
 aux_source_directory(base BASE_LIST)
 aux_source_directory(net NET_LIST)
+aux_source_directory(net/poller POLLER_LIST)
 
 # 编译生成动态库sub_muduo
 add_library(sub_muduo_base SHARED ${BASE_LIST})
-add_library(sub_muduo_net SHARED ${NET_LIST})
+add_library(sub_muduo_net SHARED ${NET_LIST} ${POLLER_LIST})
 
 add_executable(test test/main.cpp test/test.cpp)
 

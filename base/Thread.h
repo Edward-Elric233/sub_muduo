@@ -48,7 +48,7 @@ namespace sub_muduo {
         string name_;
         CountDownLatch latch_;
 
-        static std::atomic_int32 numCreated_;
+        static std::atomic_int32_t numCreated_;
     };
 
 }

@@ -12,11 +12,11 @@
 #include <vector>
 
 namespace sub_muduo {
+    class Timestamp;
     namespace net {
 
         class Channel;
         class EventLoop;
-        class Timestamp;
 
         class Poller : noncopyable {
         public:

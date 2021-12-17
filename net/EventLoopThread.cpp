@@ -12,7 +12,7 @@ namespace sub_muduo {
         EventLoopThread::EventLoopThread(const ThreadInitCallback &cb, const std::string &name)
             : loop_(nullptr)
             , exiting_(false)
-            , thread(std::bind(&EventLoopThread::threadFunc, this), name)
+            , thread_(std::bind(&EventLoopThread::threadFunc, this), name)
             , mutex_()
             , cond_(mutex_)
             , callback_(cb) {

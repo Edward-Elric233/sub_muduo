@@ -8,13 +8,13 @@
 
 namespace sub_muduo {
 
-std::atomic_int32 numCreated_ = 0;
+std::atomic_int32_t Thread::numCreated_ = 0;
 
-Thread::Thread(ThreadFunc, const string &name)
+Thread::Thread(ThreadFunc threadFunc, const string &name)
     : started_(false)
     , joined_(false)
     , tid_(0)
-    , func_(std::move(ThreadFunc))
+    , func_(std::move(threadFunc))
     , name_(name)
     , latch_(1) {
     setDefaultName();

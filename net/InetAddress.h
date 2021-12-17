@@ -7,7 +7,7 @@
 #define SUB_MUDUO_INETADDRESS_H
 
 #include "copyable.h"
-#include "sockets_ops.h"
+#include "SocketsOps.h"
 #include "Types.h"
 
 #include <netinet/in.h>
@@ -43,6 +43,9 @@ namespace sub_muduo {
             //返回sockaddr *，用于bind
             const struct sockaddr* getSockAddr() const {return sockets::sockaddr_cast(&addr_);}
 
+            void setSockAddr(const struct sockaddr_in &addr) {
+                addr_ = addr;
+            }
         };
 
     }   //namespace net

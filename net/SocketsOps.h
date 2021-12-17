@@ -16,6 +16,12 @@ namespace sub_muduo {
             inline const struct sockaddr *sockaddr_cast(const struct sockaddr_in* addr) {
                 return reinterpret_cast<const struct sockaddr *>(addr);
             }
+
+            void close(int fd);
+            void bindOrDie(int sockfd, const struct sockaddr* addr);
+            void listenOrDie(int sockfd);
+            int accept(int sockfd, struct sockaddr_in *addr);
+            void shutdownWrite(int sockfd);
         }
     }
 }

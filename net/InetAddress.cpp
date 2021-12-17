@@ -45,6 +45,7 @@ namespace sub_muduo {
                 //ipv6
                 return "";
             }
+            return "";
         }
 
         in_port_t InetAddress::getPort() const {
@@ -55,6 +56,7 @@ namespace sub_muduo {
             string ip = getIp();
             return ip.append(":").append(std::to_string(getPort()));
         }
+
     }
 
 }

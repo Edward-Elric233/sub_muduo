@@ -9,14 +9,17 @@
 
 #include <stdlib.h>
 
-using namespace sub_muduo;
-using namespace sub_muduo::net;
+namespace sub_muduo {
+    namespace net {
 
-Poller *Poller::newDefaultPoller(EventLoop *loop) {
-    if (::getenv("SUB_MUDUO_USE_POLL")) {
-        //使用poll实现
-    } else {
-        //使用epoll实现
-        return new EPollPoller;
+        Poller *Poller::newDefaultPoller(EventLoop *loop) {
+            if (::getenv("SUB_MUDUO_USE_POLL")) {
+                //使用poll实现
+            } else {
+                //使用epoll实现
+                return new EPollPoller(loop);
+            }
+            return nullptr;
+        }
     }
 }

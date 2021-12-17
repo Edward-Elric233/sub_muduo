@@ -12,9 +12,9 @@
 #include <memory>
 
 namespace sub_muduo {
+    class Timestamp;    //Timestamp类的前置声明
     namespace net {
 
-        class Timestamp;    //Timestamp类的前置声明
         class EventLoop;    //EventLoop类的前置声明
 
 
@@ -58,7 +58,7 @@ namespace sub_muduo {
                 return events_;
             }
             //供Poller调用
-            int setRevents(int rvt) {
+            void setRevents(int rvt) {
                 revents_ = rvt;
             }
             bool isNonEvent() const {

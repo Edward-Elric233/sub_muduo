@@ -4,12 +4,13 @@
 // Date: 2021/12/2
 // Description: 
 #include "CountDownLatch.h"
+#include "Condition.h"
 
 namespace sub_muduo {
 
     CountDownLatch::CountDownLatch(int count)
     : count_(count)
-    ; condition_(mutex_) {}//使用互斥锁初始化条件变量
+    , condition_(mutex_) {}//使用互斥锁初始化条件变量
 
     void CountDownLatch::wait() {
         MutexLockGuard lockGuard(mutex_);   //查看count的状态也需要上锁
