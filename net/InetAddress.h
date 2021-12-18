@@ -28,7 +28,7 @@ namespace sub_muduo {
              * @param loopbackOnly 是否设定为本地回环地址127.0.0.1
              * @param ipv6 是否是ipv6地址
              */
-            explicit InetAddress(in_port_t port, bool loopbackOnly = false, bool ipv6 = false);
+            explicit InetAddress(in_port_t port = 0, bool loopbackOnly = false, bool ipv6 = false);
 
             //指定IP地址和端口号
             InetAddress(const string &ip, in_port_t port, bool ipv6 = false);
