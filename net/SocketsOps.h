@@ -22,6 +22,7 @@ namespace sub_muduo {
             void listenOrDie(int sockfd);
             int accept(int sockfd, struct sockaddr_in *addr);
             void shutdownWrite(int sockfd);
+            int createNonblockingOrDie(sa_family_t family);
         }
     }
 }

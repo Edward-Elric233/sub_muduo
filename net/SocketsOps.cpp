@@ -52,5 +52,14 @@ void sockets::shutdownWrite(int sockfd) {
     }
 }
 
+int sockets::createNonblockingOrDie(sa_family_t family) {
+    //默认是TCP协议，并且设置创建的文件描述符是非阻塞的，在子进程中自动关闭
+    int sockfd = ::socket(family, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, IPPROTO_TCP);
+    if (sockfd < 0) {
+        //TODO:出错处理
+    }
+    return sockfd;
+}
+
 }
 }
